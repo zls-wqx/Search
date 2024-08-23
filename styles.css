@@ -64,18 +64,26 @@ button:hover {
 }
 
 .result-item {
-    margin-bottom: 15px;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 20px 0;
 }
 
 .result-item a {
     color: #1a73e8;
     text-decoration: none;
     font-size: 18px;
-    line-height: 1.4;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .result-item a:hover {
     text-decoration: underline;
+}
+
+.result-item .snippet {
+    color: #4d5156;
+    font-size: 14px;
 }
 
 .pagination {
