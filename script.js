@@ -2,7 +2,7 @@ let currentPage = 1;
 const resultsPerPage = 10;
 
 async function performSearch(page = 1) {
-    const query = document.getElementById('search-query').value;
+    const query = document.getElementById('search-query').value.trim();
     if (!query) {
         alert('Please enter a search query');
         return;
@@ -34,7 +34,10 @@ function displayResults(data, page) {
             if (item.Text && item.FirstURL) {
                 const resultItem = document.createElement('div');
                 resultItem.className = 'result-item';
-                resultItem.innerHTML = `<a href="${item.FirstURL}" target="_blank">${item.Text}</a>`;
+                resultItem.innerHTML = `
+                    <a href="${item.FirstURL}" target="_blank">${item.Text}</a>
+                    <div class="snippet">${item.Result || ''}</div>
+                `;
                 resultsContainer.appendChild(resultItem);
             }
         });
